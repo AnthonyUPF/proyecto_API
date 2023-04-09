@@ -1,6 +1,6 @@
 //fetch('https://reqres.in/api/users')
 window.onload = function () {
-  fetch('https://reqres.in/api/users')
+  fetch('http://localhost:8080/api')
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -28,7 +28,6 @@ window.onload = function () {
       console.error('There was a problem with the fetch operation:', error);
     });
 };
- 
 
 
 
