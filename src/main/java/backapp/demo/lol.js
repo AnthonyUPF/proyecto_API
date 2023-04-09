@@ -16,9 +16,8 @@
   .catch(error => console.error(error));*/
 
      window.onload = function (){
-      fetch('http://localhost:8080/api')
-       //fetch('https://reqres.in/api/users?page=1&per_page=6')
-     //fetch('https://reqres.in/api/users')
+      //fetch('http://localhost:8080/api')
+     fetch('https://reqres.in/api/users')
         .catch(error => console.error(error))
         .then(response => response.json())
         .then(json => {
