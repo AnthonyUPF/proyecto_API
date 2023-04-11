@@ -6,8 +6,8 @@ import lombok.Getter;
 @Setter
 @Getter
 public class Support {
-	public String url;
-    public String text;
+	private String url;
+    private String text;
 
     public Support(String url, String text) {
         this.url = url;

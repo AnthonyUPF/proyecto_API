@@ -9,12 +9,12 @@ import lombok.Getter;
 @Setter
 @Getter
 public class Response {
-	public int page;
-    public int per_page;
-    public int total;
-    public int total_pages;
-    public ArrayList<Data> data=new ArrayList<Data>();
-    public Support support;
+	private int page;
+    private int per_page;
+    private int total;
+    private int total_pages;
+    private ArrayList<Data> data=new ArrayList<Data>();
+    private Support support;
 
     public Response(int page, int per_page, int total, int total_pages) {
         this.page = page;
