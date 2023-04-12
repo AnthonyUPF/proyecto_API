@@ -1,4 +1,4 @@
-package backapp.demo.BackEnd;
+package backapp.demo.models;
 
 import lombok.Setter;
 import lombok.Getter;
