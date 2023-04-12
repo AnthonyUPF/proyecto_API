@@ -4,6 +4,8 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,10 +16,9 @@ import backapp.demo.models.Support;
 @RestController
 @RequestMapping("/api")
 public class SongController {
-    @GetMapping("/songs")
-        public ResponseEntity<Response> api() {
-        Response response = new Response(1, 6, 12, 2);
+    Response response = new Response(1, 6, 12, 2);
 
+    public SongController(){
         Data data1 = new Data(1, "george.bluth@reqres.in", "George", "Bluth", "https://reqres.in/img/faces/1-image.jpg");
         response.getData().add(data1);
 
@@ -37,10 +38,21 @@ public class SongController {
         response.getData().add(data6);
 
         Support support = new Support("https://reqres.in/#support-heading", "To keep ReqRes free, contributions towards server costs are appreciated!");
+        
         response.setSupport(support);
-
+    }
+    
+    @GetMapping("/songs")
+    public ResponseEntity<Response> getAllSongs() {
         HttpHeaders headers = new HttpHeaders();
         headers.add("Access-Control-Allow-Origin", "*"); // add CORS header
-        return new ResponseEntity<>(response, headers, HttpStatus.OK);
+        return new ResponseEntity<>(this.response, headers, HttpStatus.OK);
     }
+
+    @PostMapping("/addSong")
+    public Data addSong(@RequestBody Data data) {
+        this.response.getData().add(data);
+        return data;
+    }
+
 }
