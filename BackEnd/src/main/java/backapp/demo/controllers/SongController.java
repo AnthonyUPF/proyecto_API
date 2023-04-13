@@ -3,10 +3,12 @@ package backapp.demo.controllers;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import backapp.demo.models.Data;
@@ -52,6 +54,13 @@ public class SongController {
     @PostMapping("/addSong")
     public Data addSong(@RequestBody Data data) {
         this.response.getData().add(data);
+        return data;
+    }
+    
+    @DeleteMapping("/deleteSong")
+    public Data deleteSong(@RequestParam int id) {
+        Data data = this.response.getData().stream().filter(x -> x.getId() == id).findFirst().orElse(null);
+        this.response.getData().remove(data);
         return data;
     }
 
