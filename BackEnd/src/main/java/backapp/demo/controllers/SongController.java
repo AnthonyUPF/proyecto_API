@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -62,6 +63,16 @@ public class SongController {
         Data data = this.response.getData().stream().filter(x -> x.getId() == id).findFirst().orElse(null);
         this.response.getData().remove(data);
         return data;
+    }
+
+    @PutMapping("/updateSong")
+    public Data updateSong(@RequestBody Data data) {
+        Data dataToUpdate = this.response.getData().stream().filter(x -> x.getId() == data.getId()).findFirst().orElse(null);
+        dataToUpdate.setEmail(data.getEmail());
+        dataToUpdate.setFirst_name(data.getFirst_name());
+        dataToUpdate.setLast_name(data.getLast_name());
+        dataToUpdate.setAvatar(data.getAvatar());
+        return dataToUpdate;
     }
 
 }
