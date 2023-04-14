@@ -68,11 +68,28 @@ public class SongController {
     @PutMapping("/updateSong")
     public Data updateSong(@RequestBody Data data) {
         Data dataToUpdate = this.response.getData().stream().filter(x -> x.getId() == data.getId()).findFirst().orElse(null);
-        dataToUpdate.setEmail(data.getEmail());
+        /*dataToUpdate.setEmail(data.getEmail());
         dataToUpdate.setFirst_name(data.getFirst_name());
         dataToUpdate.setLast_name(data.getLast_name());
-        dataToUpdate.setAvatar(data.getAvatar());
+        dataToUpdate.setAvatar(data.getAvatar());*/
+        this.response.getData().set(this.response.getData().indexOf(dataToUpdate), data);
         return dataToUpdate;
+    }
+
+    @PutMapping("/updateSong2")
+    public int updateUser(@RequestBody Data data){
+        //delete user with id = idUser
+        int i = 0;
+        while(i<this.response.getData().size()){
+            if (this.response.getData().get(i).getId() == data.getId()){
+                //he encontrado el idx "i" del elemento a modificar
+                //-> sustituyo el elemento con el nuevo...
+                this.response.getData().set(i, data);
+                return 1;
+            }
+            i++;
+        }
+        return -1;
     }
 
 }
