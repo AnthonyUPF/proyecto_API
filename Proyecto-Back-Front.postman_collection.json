@@ -106,6 +106,15 @@
 			"request": {
 				"method": "PUT",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 100,\r\n    \"email\": \"2george.bluth@reqres.in\",\r\n    \"first_name\": \"2George\",\r\n    \"last_name\": \"2Bluth\",\r\n    \"avatar\": \"2https://reqres.in/img/faces/1-image.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
 					"raw": "http://localhost:8080/api/updateSong",
 					"protocol": "http",
@@ -126,6 +135,15 @@
 			"request": {
 				"method": "PUT",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 100,\r\n    \"email\": \"2george.bluth@reqres.in\",\r\n    \"first_name\": \"2George\",\r\n    \"last_name\": \"2Bluth\",\r\n    \"avatar\": \"2https://reqres.in/img/faces/1-image.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
 					"raw": "http://localhost:8080/api/updateSong2",
 					"protocol": "http",
