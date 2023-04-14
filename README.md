@@ -9,3 +9,12 @@ Crear una API con SPRING (REST Controller) que acepte una request HTTP de tipo "
 Realizar las pruebas necesarias para verificar el correcto funcionamiento.
 
 Entregar un link al proyecto GITHUB del grupo de trabajo.
+
+## UF1844-AF9 POST, DELETE & PUT Methods
+
+Instrucciones
+Cogiendo como base la API creada para la aplicación de la AF8 (GET), añadir todo lo necesario para gestionar las llamadas de tipo POST, DELETE, PUT.
+El resultado final tendrá que ser una API que provea todas las funcionalidades CRUD para nuestra(s) entidad(es)
+
+Entregar el link al repositorio GITHUB del proyecto.
+No olvides de invitar el profesor como miembro del team
